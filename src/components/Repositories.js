@@ -33,17 +33,23 @@ export default class Repositories extends Component {
     generateDisplay = (repos) => {
         const display =  <div>
             {repos.map((data, key) => {
-                const style = {
+                const style = data.primaryLanguage !== null ? {
                     height: "20px",
                     width: "20px",
                     borderRadius: "20px",
                     background: data.primaryLanguage.color
+                } : {
+                    height: "20px",
+                    width: "20px",
+                    borderRadius: "20px",
+                    background: "#3e3e3e"
                 }
+
                 return (
                     <div key={key}>
                         <a href={data.url} target="_blank" rel="noreferrer">{data.name}</a>
                         <p>{data.desciption}</p>
-                        <p>{data.primaryLanguage.name.toLowerCase()}</p>
+                        {data.primaryLanguage !== null ? <p>{data.primaryLanguage.name.toLowerCase()}</p> : <p>uncertain language</p>}  
                         <div style={style}></div>
                         <p>Created On {new Date(data.createdAt).toDateString()}</p>
                     </div>

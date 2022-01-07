@@ -14,6 +14,7 @@ export default class Search extends Component {
     }
 
     componentDidMount() {
+        this.searchUser();
     }
 
     componentDidUpdate() {
@@ -48,7 +49,6 @@ export default class Search extends Component {
                             color
                         }
                     }
-                    totalCount
                 }
             }
         }`;
@@ -84,7 +84,7 @@ export default class Search extends Component {
         return (
             <div>
                 Search
-                <input placeholder='Enter name of user' onChange={this.updateLogin} defaultValue={"SkinnyPigeon"}/>
+                <input placeholder='Enter name of user' onChange={this.updateLogin}/>
                 <button onClick={this.searchUser}>Search for User</button>
                 <Repositories 
                     repos={this.state.repositories}
