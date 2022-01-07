@@ -12,22 +12,22 @@ export default class Repositories extends Component {
     componentDidUpdate(prevProps, prevState) {
         console.log(prevProps);
         if(this.props.avatarUrl !== prevProps.avatarUrl) {
-            // const toDisplay = this.generateDisplay(this.props.repos);
             this.generateDisplay(this.props.repos);
             this.setState({
                 repos: this.props.repos,
-                // display: toDisplay
             });
         }
-        // if(this.state.repoSearch !== prevState.repoSearch && 
-        //     this.state.repoSearch.length > 3 && 
-        //     this.state.display !== null) {
-        //     console.log("Searching current repos")
-        //     const toDisplay = this.generateDisplay([this.props.repos[0]])
-        //     this.setState({
-        //         display: toDisplay
-        //     })
-        // }
+        if(this.state.repoSearch !== prevState.repoSearch && 
+            this.state.repoSearch.length > 3 && 
+            this.state.display !== null) {
+            console.log("Searching current repos")
+            this.searchRepos();
+        }
+        if(this.state.repoSearch !== prevState.repoSearch &&
+            this.state.repoSearch.length <= 3 &&
+            this.state.display !== null) {
+                this.generateDisplay(this.props.repos)
+            }
     }
 
     generateDisplay = (repos) => {
