@@ -6,7 +6,6 @@ export default class Repositories extends Component {
         repos: [],
         display: null,
         repoSearch: ''
-
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -55,7 +54,6 @@ export default class Repositories extends Component {
                             <div style={style}></div>
                         </div>
                         <div className='repoBottom'></div>
-                        {/* <p>Created On {new Date(data.createdAt).toDateString()}</p> */}
                     </div>
                 )
             })}
@@ -93,7 +91,6 @@ export default class Repositories extends Component {
         return (
             <div className='repos'>
                 <input onChange={this.updateRepoSearch} placeholder='Enter name of repo'/>
-                {/* <button onClick={this.searchRepos}>Search for Repo</button> */}
                 {this.state.display}
             </div>
         )

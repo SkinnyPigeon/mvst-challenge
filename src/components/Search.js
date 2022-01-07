@@ -23,6 +23,9 @@ export default class Search extends Component {
     }
 
     searchUser = () => {
+        this.setState({
+            avatarUrl: ''
+        })
         const query = `
         query {
             user (login:"${this.state.login}") {
