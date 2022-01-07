@@ -17,7 +17,7 @@ export default class Search extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state)
+        console.log(this.state);
     }
 
     searchUser = () => {
@@ -65,7 +65,7 @@ export default class Search extends Component {
                     location: user.location,
                     followers: user.followers.nodes,
                     repositories: user.repositories.nodes
-                })
+                });
             }) 
             .catch(error => console.error(error));
     }
@@ -73,7 +73,7 @@ export default class Search extends Component {
     updateLogin = (e) => {
         this.setState({
             login: e.target.value
-        })
+        });
     }
 
     render() {

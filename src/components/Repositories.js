@@ -3,18 +3,21 @@ import React, { Component } from 'react';
 export default class Repositories extends Component {
 
     state = {
+        repos: [],
         display: null,
         repoSearch: ''
 
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps)
+        console.log(prevProps);
         if(this.props.avatarUrl !== prevProps.avatarUrl) {
-            const toDisplay = this.generateDisplay(this.props.repos);
+            // const toDisplay = this.generateDisplay(this.props.repos);
+            this.generateDisplay(this.props.repos);
             this.setState({
-                display: toDisplay
-            })
+                repos: this.props.repos,
+                // display: toDisplay
+            });
         }
         // if(this.state.repoSearch !== prevState.repoSearch && 
         //     this.state.repoSearch.length > 3 && 
@@ -28,7 +31,7 @@ export default class Repositories extends Component {
     }
 
     generateDisplay = (repos) => {
-        return <div>
+        const display =  <div>
             {repos.map((data, key) => {
                 return (
                     <div key={key}>
@@ -37,12 +40,25 @@ export default class Repositories extends Component {
                 )
             })}
         </div>
+        this.setState({
+            display: display
+        })
     }
 
     updateRepoSearch = (e) => {
         this.setState({
             repoSearch: e.target.value
-        })
+        });
+    }
+
+    searchRepos = () => {
+        const results = []
+        this.state.repos.forEach((repo) => {
+            if(repo.name.indexOf(this.state.repoSearch) !== -1) {
+                results.push(repo);
+            }
+        });
+        this.generateDisplay(results);
     }
 
     render() {
@@ -50,7 +66,7 @@ export default class Repositories extends Component {
             <div>
                 Repos
                 <input onChange={this.updateRepoSearch}/>
-                <button>Search for Repo</button>
+                <button onClick={this.searchRepos}>Search for Repo</button>
                 {this.state.display}
             </div>
         )
