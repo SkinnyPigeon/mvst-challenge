@@ -33,15 +33,16 @@ export default class Repositories extends Component {
     generateDisplay = (repos) => {
         const display =  <div>
             {repos.map((data, key) => {
+                const size = "15px";
                 const style = data.primaryLanguage !== null ? {
-                    height: "20px",
-                    width: "20px",
-                    borderRadius: "20px",
+                    height: size,
+                    width: size,
+                    borderRadius: size,
                     background: data.primaryLanguage.color
                 } : {
-                    height: "20px",
-                    width: "20px",
-                    borderRadius: "20px",
+                    height: size,
+                    width: size,
+                    borderRadius: size,
                     background: "#3e3e3e"
                 }
 
@@ -49,8 +50,10 @@ export default class Repositories extends Component {
                     <div key={key}>
                         <a href={data.url} target="_blank" rel="noreferrer">{data.name}</a>
                         {data.description !== null ? <p>{data.description}</p> : <p style={{opacity: "50%"}}>No description set</p>}
-                        {data.primaryLanguage !== null ? <p>{data.primaryLanguage.name}</p> : <p style={{opacity: "50%"}}>Uncertain language</p>}  
-                        <div style={style}></div>
+                        <div className='language'>
+                            {data.primaryLanguage !== null ? <p> {data.primaryLanguage.name}</p> : <p style={{opacity: "50%"}}>Uncertain language</p>}  
+                            <div style={style}></div>
+                        </div>
                         <div className='repoBottom'></div>
                         {/* <p>Created On {new Date(data.createdAt).toDateString()}</p> */}
                     </div>
@@ -88,10 +91,9 @@ export default class Repositories extends Component {
 
     render() {
         return (
-            <div>
-                Repos
-                <input onChange={this.updateRepoSearch}/>
-                <button onClick={this.searchRepos}>Search for Repo</button>
+            <div className='repos'>
+                <input onChange={this.updateRepoSearch} placeholder='Enter name of repo'/>
+                {/* <button onClick={this.searchRepos}>Search for Repo</button> */}
                 {this.state.display}
             </div>
         )

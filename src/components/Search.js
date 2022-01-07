@@ -38,7 +38,7 @@ export default class Search extends Component {
                         url
                     }
                 }
-                repositories(last: 5) {
+                repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
                     nodes {
                         name
                         description
@@ -82,10 +82,11 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div>
-                Search
-                <input placeholder='Enter name of user' onChange={this.updateLogin}/>
-                <button onClick={this.searchUser}>Search for User</button>
+            <div className='main'>
+                <div className='search'>
+                    <input placeholder='Enter name of user' onChange={this.updateLogin}/>
+                    <button onClick={this.searchUser}>Search for User</button>
+                </div>
                 <Repositories 
                     repos={this.state.repositories}
                     avatarUrl={this.state.avatarUrl}
