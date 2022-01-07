@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Repositories from './Repositories';
 
 export default class Search extends Component {
     state = {
@@ -57,6 +58,7 @@ export default class Search extends Component {
             }).then(res => res.json())
             .then(body => {
                 // console.log(body.data.user);
+                
                 const user = body.data.user;
                 this.setState({
                     login: user.login,
@@ -75,8 +77,11 @@ export default class Search extends Component {
     render() {
         return (
             <div>
-
                 Search
+                <Repositories 
+                    repos={this.state.repositories}
+                    login={this.state.login}
+                />
             </div>
         )
     }
