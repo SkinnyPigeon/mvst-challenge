@@ -2,16 +2,30 @@ import React, { Component } from 'react';
 
 export default class Search extends Component {
     state = {
-
+        login: '',
+        avatarUrl: '',
+        bio: null,
+        company: null,
+        createdAt: '',
+        location: '',
+        followers: [],
+        repositories: []
     }
 
     componentDidMount() {
+       this.searchUser("SkinnyPigeon")
+    }
+
+    componentDidUpdate() {
+        console.log(this.state)
+    }
+
+    searchUser = (user) => {
         const query = `
         query {
-            user (login:"SkinnyPigeon") {
+            user (login:"${user}") {
                 avatarUrl
                 login
-                resourcePath
                 url
                 bio
                 company
@@ -33,16 +47,28 @@ export default class Search extends Component {
                     totalCount
                 }
             }
-        }
-        `
+        }`;
         fetch('https://api.github.com/graphql', {
             method: 'POST',
             body: JSON.stringify({query}),
             headers: {
                 'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`,
             },
-            }).then(res => res.text())
-            .then(body => console.log(body)) 
+            }).then(res => res.json())
+            .then(body => {
+                // console.log(body.data.user);
+                const user = body.data.user;
+                this.setState({
+                    login: user.login,
+                    avatarUrl: user.avatarUrl,
+                    bio: user.bio,
+                    company: user.company,
+                    createdAt: user.company,
+                    location: user.location,
+                    followers: user.followers.nodes,
+                    repositories: user.repositories.nodes
+                })
+            }) 
             .catch(error => console.error(error));
     }
 
