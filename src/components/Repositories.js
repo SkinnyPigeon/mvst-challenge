@@ -35,7 +35,9 @@ export default class Repositories extends Component {
             {repos.map((data, key) => {
                 return (
                     <div key={key}>
-                        <p>{data.name}</p>
+                        <a href={data.url} target="_blank" rel="noreferrer">{data.name}</a>
+                        <p>{data.desciption}</p>
+                        <p>Created On {new Date(data.createdAt).toDateString()}</p>
                     </div>
                 )
             })}
