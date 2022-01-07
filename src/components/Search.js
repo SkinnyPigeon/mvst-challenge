@@ -43,6 +43,10 @@ export default class Search extends Component {
                         description
                         url
                         createdAt
+                        primaryLanguage {
+                            name
+                            color
+                        }
                     }
                     totalCount
                 }
