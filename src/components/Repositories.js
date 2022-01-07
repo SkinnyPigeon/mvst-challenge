@@ -58,7 +58,15 @@ export default class Repositories extends Component {
                 results.push(repo);
             }
         });
-        this.generateDisplay(results);
+        if(results.length > 0) {
+            this.generateDisplay(results);
+        } else {
+            this.setState({
+                display: <div>
+                    <p>Unable to find repository with that name. Please check spelling</p>
+                </div>
+            })
+        }
     }
 
     render() {
