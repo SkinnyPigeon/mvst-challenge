@@ -3,7 +3,7 @@ import Repositories from './Repositories';
 
 export default class Search extends Component {
     state = {
-        login: '',
+        login: "SkinnyPigeon",
         avatarUrl: '',
         bio: null,
         company: null,
@@ -14,17 +14,16 @@ export default class Search extends Component {
     }
 
     componentDidMount() {
-       this.searchUser("SkinnyPigeon")
     }
 
     componentDidUpdate() {
         console.log(this.state)
     }
 
-    searchUser = (user) => {
+    searchUser = () => {
         const query = `
         query {
-            user (login:"${user}") {
+            user (login:"${this.state.login}") {
                 avatarUrl
                 login
                 url
@@ -57,11 +56,8 @@ export default class Search extends Component {
             },
             }).then(res => res.json())
             .then(body => {
-                // console.log(body.data.user);
-                
                 const user = body.data.user;
                 this.setState({
-                    login: user.login,
                     avatarUrl: user.avatarUrl,
                     bio: user.bio,
                     company: user.company,
@@ -74,13 +70,21 @@ export default class Search extends Component {
             .catch(error => console.error(error));
     }
 
+    updateLogin = (e) => {
+        this.setState({
+            login: e.target.value
+        })
+    }
+
     render() {
         return (
             <div>
                 Search
+                <input placeholder='Enter name of user' onChange={this.updateLogin} defaultValue={"SkinnyPigeon"}/>
+                <button onClick={this.searchUser}>Search for User</button>
                 <Repositories 
                     repos={this.state.repositories}
-                    login={this.state.login}
+                    avatarUrl={this.state.avatarUrl}
                 />
             </div>
         )

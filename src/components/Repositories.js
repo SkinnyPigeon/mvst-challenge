@@ -6,8 +6,9 @@ export default class Repositories extends Component {
         display: null
     }
 
-    componentDidUpdate(prevState, prevProps) {
-        if(this.props.login !== prevProps.login) {
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevProps)
+        if(this.props.avatarUrl !== prevProps.avatarUrl) {
             console.log("UPDATED")
         }
     }
