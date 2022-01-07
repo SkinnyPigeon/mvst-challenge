@@ -19,6 +19,10 @@ code {
   height: 100vh;
 }
 
+.burger {
+  display: none;
+}
+
 .search {
   flex-shrink: 1;
   flex-basis: 10vw;
@@ -65,9 +69,64 @@ a {
   .language p {
     margin-right: 2vw;
   }
+  .search {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .repos {
+    display: none;
+  }
 }
 
+/******BURGER*********/
 
+.hamburger {
+  display: none;
+}
+
+.hamburger input {
+  opacity: 0;
+  position: absolute;
+  margin: 10px 5px;
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  z-index: 9999;
+  padding: 10px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+@media screen and (max-width: 500px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger input:checked ~ .bar:nth-child(3) {
+    opacity: 0;
+  }
+
+  .hamburger input:checked ~ .bar:nth-child(2) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger input:checked ~ .bar:nth-child(4) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  
+}
 
 /******SPINNER********/
 

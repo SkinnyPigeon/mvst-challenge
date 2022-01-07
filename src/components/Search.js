@@ -99,6 +99,12 @@ export default class Search extends Component {
         }
         return (
             <div className='main'>
+                <div class="hamburger">
+                    <input type="checkbox" />
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
                 <div className='search'>
                     <input placeholder='Enter name of user' onChange={this.updateLogin}/>
                     <button onClick={this.searchUser}>Search for User</button>
