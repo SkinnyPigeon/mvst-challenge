@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.repoBottom {
+  border-bottom: 1px solid black;
+  opacity: 10%;
+  padding-bottom: 1vh;
+}

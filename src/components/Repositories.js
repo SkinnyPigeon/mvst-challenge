@@ -48,10 +48,11 @@ export default class Repositories extends Component {
                 return (
                     <div key={key}>
                         <a href={data.url} target="_blank" rel="noreferrer">{data.name}</a>
-                        <p>{data.desciption}</p>
-                        {data.primaryLanguage !== null ? <p>{data.primaryLanguage.name.toLowerCase()}</p> : <p>uncertain language</p>}  
+                        {data.description !== null ? <p>{data.description}</p> : <p style={{opacity: "50%"}}>No description set</p>}
+                        {data.primaryLanguage !== null ? <p>{data.primaryLanguage.name}</p> : <p style={{opacity: "50%"}}>Uncertain language</p>}  
                         <div style={style}></div>
-                        <p>Created On {new Date(data.createdAt).toDateString()}</p>
+                        <div className='repoBottom'></div>
+                        {/* <p>Created On {new Date(data.createdAt).toDateString()}</p> */}
                     </div>
                 )
             })}
