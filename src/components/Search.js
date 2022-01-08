@@ -103,7 +103,7 @@ export default class Search extends Component {
                     <input placeholder='Enter name of user' onChange={this.updateLogin}/>
                     <button onClick={this.searchUser}>Search for User</button>
                     <p>{this.state.cannotFindUser}</p>
-                    {this.state.avatarUrl !== '' ? <img className='avatar' src={this.state.avatarUrl} alt="avatar"></img> : <div class="loader">Loading...</div>}
+                    {this.state.avatarUrl !== '' ? <img className='avatar' src={this.state.avatarUrl} alt="avatar"></img> : <div className="loader">Loading...</div>}
                     <p>{this.state.userName}</p>
                     {this.state.bio !== null ? <p>{this.state.bio}</p> : <p style={notFoundStyle}>No bio set</p>}
                     {this.state.company !== null ? <p>{this.state.company}</p> : <p style={notFoundStyle}>No company set</p>}
