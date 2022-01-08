@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
             <div className='header'>
                 <h1>GitHüb</h1>
-                <div className='burger'>
+                <div>
                     <input type="checkbox" />
                     <div class="bar1"></div>
                     <div class="bar2"></div>
