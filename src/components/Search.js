@@ -41,7 +41,7 @@ export default class Search extends Component {
                         url
                     }
                 }
-                repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+                repositories(first: 5, orderBy: {field: CREATED_AT, direction: DESC}) {
                     nodes {
                         name
                         description
