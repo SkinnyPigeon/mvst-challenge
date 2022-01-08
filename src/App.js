@@ -112,7 +112,7 @@ export default class App extends Component {
 
   /** 
    * Updates this.state.login value
-   * @param {String} e The event triggered by text input to the search user input
+   * @param {Event} e The event triggered by text input to the search user input
   **/
   updateLogin = (e) => {
     this.setState({

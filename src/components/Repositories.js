@@ -27,6 +27,10 @@ export default class Repositories extends Component {
             }
     }
 
+    /**
+     * Generate a list of repositories and saves them to the state for displaying
+     * @param {array} repos The repositories to display
+     */
     generateDisplay = (repos) => {
         const display =  <div>
             {repos.map((data, key) => {
@@ -61,12 +65,21 @@ export default class Repositories extends Component {
         })
     }
 
+    /**
+     * Updates this.state.repoSearch value
+     * @param {Event} e The event triggered by text input to the search repositories input
+     */
     updateRepoSearch = (e) => {
         this.setState({
             repoSearch: e.target.value
         });
     }
 
+    /**
+     * Searches current user's repositories based on the value of this.state.repoSearch.
+     * 
+     * The search is not triggered until there are 4 characters in the search term. If there are fewer than 4 characters or the input is deleted, the complete list of repositories is displayed.
+     */
     searchRepos = () => {
         const results = []
         this.state.repos.forEach((repo) => {
