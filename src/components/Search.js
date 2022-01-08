@@ -100,7 +100,7 @@ export default class Search extends Component {
         return (
             <div className='main'>
                 <div className='search'>
-                    <input placeholder='Enter name of user' onChange={this.updateLogin}/>
+                    <input placeholder='Enter name of user' onChange={this.updateLogin} type="text"/>
                     <button onClick={this.searchUser}>Search for User</button>
                     <p>{this.state.cannotFindUser}</p>
                     {this.state.avatarUrl !== '' ? <img className='avatar' src={this.state.avatarUrl} alt="avatar"></img> : <div className="loader">Loading...</div>}

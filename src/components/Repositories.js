@@ -90,7 +90,7 @@ export default class Repositories extends Component {
     render() {
         return (
             <div className='repos'>
-                <input onChange={this.updateRepoSearch} placeholder='Search for repository'/>
+                <input onChange={this.updateRepoSearch} placeholder='Search for repository' type="text"/>
                 {this.state.display}
             </div>
         )
