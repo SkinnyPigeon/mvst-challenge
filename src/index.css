@@ -56,11 +56,17 @@ input[type=checkbox] {
   border-left: 1px solid rgba(62, 62, 62, 0.1);
 }
 
+.repos a, .repos p {
+  padding-left: 2vw;
+}
+
+.repos input {
+  margin-left: 2vw;
+}
+
 .description {
   margin-bottom: 0;
 }
-
-
 
 a {
   text-decoration: none;
