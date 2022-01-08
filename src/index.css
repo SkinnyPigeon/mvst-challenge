@@ -71,6 +71,11 @@ input[type=checkbox] {
 a {
   text-decoration: none;
   font-weight: bold;
+  color: blue;
+}
+
+a:visited {
+  color: blue;
 }
 
 .language {

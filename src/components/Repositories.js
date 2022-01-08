@@ -18,7 +18,6 @@ export default class Repositories extends Component {
         if(this.state.repoSearch !== prevState.repoSearch && 
             this.state.repoSearch.length > 3 && 
             this.state.display !== null) {
-            console.log("Searching current repos")
             this.searchRepos();
         }
         if(this.state.repoSearch !== prevState.repoSearch &&
