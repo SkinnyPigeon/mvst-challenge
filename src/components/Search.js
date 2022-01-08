@@ -24,7 +24,12 @@ export default class Search extends Component {
             opacity: "50%"
         }
         const display = this.props.show ? <div className='search'>
-            <input placeholder='Enter name of user' onChange={this.props.updateLogin} type="text"/>
+            <input 
+                placeholder='Enter name of user' 
+                onChange={this.props.updateLogin} 
+                type="text" 
+                spellCheck="false"
+            />
             <button onClick={this.props.searchUser}>Search for User</button>
             <p>{this.props.cannotFindUser}</p>
             {this.props.avatarUrl !== '' ? <img className='avatar' src={this.props.avatarUrl} alt="avatar"></img> : <div className="loader">Loading...</div>}

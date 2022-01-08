@@ -52,12 +52,11 @@ export default class App extends Component {
                     url
                 }
             }
-            repositories(first: 5, orderBy: {field: CREATED_AT, direction: DESC}) {
+            repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
                 nodes {
                     name
                     description
                     url
-                    createdAt
                     primaryLanguage {
                         name
                         color
@@ -80,7 +79,6 @@ export default class App extends Component {
           userName: user.login,
           bio: user.bio,
           company: user.company,
-          createdAt: user.createdAt,
           location: user.location,
           followers: user.followers.nodes,
           repositories: user.repositories.nodes,
@@ -91,7 +89,14 @@ export default class App extends Component {
         console.error(error);
         if (error) {
           this.setState({
-            cannotFindUser: `Cannot find user with username ${this.state.login}. Please check spelling`
+            cannotFindUser: `Cannot find user with username ${this.state.login}. Please check spelling`,
+            avatarUrl: '',
+            userName: '',
+            bio: null,
+            company: null,
+            location: '',
+            followers: [],
+            repositories: []
           })
         }
       });
