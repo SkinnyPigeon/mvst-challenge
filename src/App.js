@@ -19,6 +19,20 @@ export default class App extends Component {
     showSearch: false
   }
 
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if(e.code === 'Enter') {
+        this.searchUser();
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", (e) => {
+      return;
+    });
+  }
+
   searchUser = () => {
     this.setState({
       avatarUrl: ''
