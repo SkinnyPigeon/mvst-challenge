@@ -33,6 +33,13 @@ export default class App extends Component {
     });
   }
 
+  /**
+   * Search for user based on this.state.login
+   * 
+   * Defaults to SkinnyPigeon on startup.
+   * 
+   * Saves results to state or displays error message if user not found.
+  **/
   searchUser = () => {
     this.setState({
       avatarUrl: ''
@@ -102,12 +109,20 @@ export default class App extends Component {
       });
   }
 
+
+  /** 
+   * Updates this.state.login value
+   * @param {String} e The event triggered by text input to the search user input
+  **/
   updateLogin = (e) => {
     this.setState({
       login: e.target.value
     });
   }
 
+  /**
+   * Changes the view in mobile back and forth between user search and repository view
+   */
   switch = () => {
     const showRepos = this.state.showRepos;
     const showSearch = this.state.showSearch;
