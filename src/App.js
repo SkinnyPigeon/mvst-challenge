@@ -15,6 +15,8 @@ export default class App extends Component {
     followers: [],
     repositories: [],
     cannotFindUser: '',
+    showRepos: true,
+    showSearch: false
   }
 
   searchUser = () => {
@@ -87,10 +89,21 @@ export default class App extends Component {
     });
   }
 
+  switch = () => {
+    const showRepos = this.state.showRepos;
+    const showSearch = this.state.showSearch;
+    this.setState({
+      showRepos: !showRepos,
+      showSearch: !showSearch
+    })
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header 
+          switch={this.switch}
+        />
         <div className='main'>
           <Search
             searchUser={this.searchUser}
@@ -104,10 +117,33 @@ export default class App extends Component {
             followers={this.state.followers}
             repositories={this.state.repositories}
             cannotFindUser={this.state.cannotFindUser}
+            show={true}
           />
           <Repositories
             repos={this.state.repositories}
             avatarUrl={this.state.avatarUrl}
+            show={true}
+          />
+        </div>
+        <div className='mobile'>
+          <Search
+            searchUser={this.searchUser}
+            updateLogin={this.updateLogin}
+            login={this.state.login}
+            userName={this.state.userName}
+            avatarUrl={this.state.avatarUrl}
+            bio={this.state.bio}
+            company={this.state.company}
+            location={this.state.location}
+            followers={this.state.followers}
+            repositories={this.state.repositories}
+            cannotFindUser={this.state.cannotFindUser}
+            show={this.state.showSearch}
+          />
+          <Repositories
+            repos={this.state.repositories}
+            avatarUrl={this.state.avatarUrl}
+            show={this.state.showRepos}
           />
         </div>
       </div>

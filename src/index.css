@@ -160,6 +160,10 @@ button:active {
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
+.mobile {
+  display: none;
+}
+
 
 
 @media screen and (max-width: 500px){
@@ -189,10 +193,6 @@ button:active {
     transform: rotate(45deg) translate(-8px, -8px);
   }
 
-  .search {
-    display: none;
-  }
-
   input:checked ~ .search {
     display: block;
   }
@@ -215,6 +215,14 @@ button:active {
 
   .header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .main {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
   }
 }
 

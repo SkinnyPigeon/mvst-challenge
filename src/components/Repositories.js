@@ -88,10 +88,17 @@ export default class Repositories extends Component {
     }
 
     render() {
+        const display = this.props.show ? <div>
+            <input onChange={this.updateRepoSearch} placeholder='Search for repository' type="text"/>
+            {this.state.display} 
+        </div> : null;
         return (
+            // <div className='repos'>
+            //     <input onChange={this.updateRepoSearch} placeholder='Search for repository' type="text"/>
+            //     {this.state.display}
+            // </div>
             <div className='repos'>
-                <input onChange={this.updateRepoSearch} placeholder='Search for repository' type="text"/>
-                {this.state.display}
+                {display}
             </div>
         )
     }
