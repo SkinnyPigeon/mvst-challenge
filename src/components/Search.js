@@ -23,7 +23,7 @@ export default class Search extends Component {
             color: "#3e3e3e",
             opacity: "50%"
         }
-        const display = this.props.show ? <div>
+        const display = this.props.show ? <div className='search'>
             <input placeholder='Enter name of user' onChange={this.props.updateLogin} type="text" />
             <button onClick={this.props.searchUser}>Search for User</button>
             <p>{this.props.cannotFindUser}</p>
