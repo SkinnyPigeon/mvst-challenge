@@ -15,9 +15,6 @@ export default class App extends Component {
     followers: [],
     repositories: [],
     cannotFindUser: '',
-    repos: [],
-    display: null,
-    repoSearch: ''
   }
 
   searchUser = () => {
@@ -94,24 +91,25 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Search
-          searchUser={this.searchUser}
-          updateLogin={this.updateLogin}
-          login={this.state.login}
-          userName={this.state.userName}
-          avatarUrl={this.state.avatarUrl}
-          bio={this.state.bio}
-          company={this.state.company}
-          location={this.state.location}
-          followers={this.state.followers}
-          repositories={this.state.repositories}
-          cannotFindUser={this.state.cannotFindUser}
-        />
-        <Repositories
-          repos={this.state.repositories}
-          avatarUrl={this.state.avatarUrl}
-
-        />
+        <div className='main'>
+          <Search
+            searchUser={this.searchUser}
+            updateLogin={this.updateLogin}
+            login={this.state.login}
+            userName={this.state.userName}
+            avatarUrl={this.state.avatarUrl}
+            bio={this.state.bio}
+            company={this.state.company}
+            location={this.state.location}
+            followers={this.state.followers}
+            repositories={this.state.repositories}
+            cannotFindUser={this.state.cannotFindUser}
+          />
+          <Repositories
+            repos={this.state.repositories}
+            avatarUrl={this.state.avatarUrl}
+          />
+        </div>
       </div>
     )
   }
