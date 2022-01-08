@@ -22,6 +22,10 @@ code {
   align-items: center;
 }
 
+.header h1 {
+  padding-left: 2vw;
+}
+
 input[type=checkbox] {
   display: none;
 }
@@ -52,11 +56,11 @@ input[type=checkbox] {
   border-left: 1px solid rgba(62, 62, 62, 0.1);
 }
 
-.repoBottom {
-  border-bottom: 1px solid black;
-  opacity: 10%;
-  padding-bottom: 1vh;
+.description {
+  margin-bottom: 0;
 }
+
+
 
 a {
   text-decoration: none;
@@ -72,6 +76,24 @@ a {
 .language p {
   margin-right: 0.5vw;
 }
+
+.mobile {
+  display: none;
+}
+
+.repoBottom {
+  border-bottom: 1px solid black;
+  opacity: 10%;
+}
+
+.repoRow {
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 0;
+}
+
+
+/******Buttons and Input********/
 
 
 input[type=text] {
@@ -160,11 +182,7 @@ button:active {
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
-.mobile {
-  display: none;
-}
-
-
+/*******Mobile**********/
 
 @media screen and (max-width: 500px){
   .language p {
@@ -203,6 +221,12 @@ button:active {
     -webkit-transform: scale(4);
     -o-transform: scale(4);
     transform: scale(4);
+    right: 5vw;
+    top: 3vh;
+  }
+
+  .burger {
+    padding-right: 2vw;
   }
 
   .header {
@@ -220,6 +244,7 @@ button:active {
   .repos {
     display: flex;
     flex-direction: column;
+    flex-basis: 100vh;
   }
 
   .search {
@@ -238,6 +263,34 @@ button:active {
     width: 90%;
     margin: 1vh auto;
     padding: 1vh;
+  }
+
+  .repos a{
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+
+  .search p {
+    font-size: 1.3em;
+  }
+
+  .description {
+    font-size: 1.1em;
+  }
+
+  .language p {
+    font-size: 1.1em;
+  }
+
+  .repoBottom {
+    opacity: 30%;
+    padding: 0;
+  }
+
+  .repoRow {
+    padding-top: 1vh;
+    width: 90%;
+    margin: 0 auto;
   }
 
 }

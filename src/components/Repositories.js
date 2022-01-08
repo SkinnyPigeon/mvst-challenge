@@ -45,9 +45,9 @@ export default class Repositories extends Component {
                 }
 
                 return (
-                    <div key={key}>
+                    <div key={key} className='repoRow'>
                         <a href={data.url} target="_blank" rel="noreferrer">{data.name}</a>
-                        {data.description !== null ? <p>{data.description}</p> : <p style={{opacity: "50%"}}>No description set</p>}
+                        {data.description !== null ? <p className='description'>{data.description}</p> : <p className='description' style={{opacity: "50%"}}>No description set</p>}
                         <div className='language'>
                             {data.primaryLanguage !== null ? <p> {data.primaryLanguage.name}</p> : <p style={{opacity: "50%"}}>Uncertain language</p>}  
                             <div style={style}></div>
@@ -71,7 +71,7 @@ export default class Repositories extends Component {
     searchRepos = () => {
         const results = []
         this.state.repos.forEach((repo) => {
-            if(repo.name.indexOf(this.state.repoSearch) !== -1) {
+            if(repo.name.toLowerCase().indexOf(this.state.repoSearch.toLowerCase()) !== -1) {
                 results.push(repo);
             }
         });
@@ -92,7 +92,7 @@ export default class Repositories extends Component {
             {this.state.display} 
         </div> : null;
         return (
-            <div>
+            <div className='repos'>
                 {display}
             </div>
         )

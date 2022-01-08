@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
             <div className='header'>
                 <h1>GitHüb</h1>
-                <div>
+                <div className='burger'>
                     <input type="checkbox" onClick={this.props.switch}/>
                     <div className="bar1"></div>
                     <div className="bar2"></div>
