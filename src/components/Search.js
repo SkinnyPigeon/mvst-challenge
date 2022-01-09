@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Repositories from './Repositories';
 
 export default class Search extends Component {
     state = {
