@@ -29,12 +29,19 @@ To deploy the project first clone the repository from the terminal:
 $ git clone git@github.com:SkinnyPigeon/mvst-challenge.git
 ```
 
-
 Now you can change into the `mvst` directory:
 
 ```bash
 $ cd mvst-challenge
 ```
+
+A new .env file must be created in order to provide the access key:
+
+```bash
+$ echo REACT_APP_TOKEN= >> .env
+```
+
+A GitHub personal access token **must be copied to this file after the `=` sign**. These can be created [here](https://github.com/settings/tokens/new). Leaving all of the options blank on the creation screen will work for this project.
 
 Now you must install the **node modules**:
 
