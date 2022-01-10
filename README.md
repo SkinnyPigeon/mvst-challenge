@@ -26,19 +26,19 @@ The `searchRepos` functions is used to filter through the user's repositories. F
 To deploy the project first clone the repository from the terminal:
 
 ```bash
-$ git clone git@github.com:SkinnyPigeon/mvst-challenge.git
+git clone git@github.com:SkinnyPigeon/mvst-challenge.git
 ```
 
 Now you can change into the `mvst-challenge` directory:
 
 ```bash
-$ cd mvst-challenge
+cd mvst-challenge
 ```
 
 A new .env file must be created in order to provide the access key:
 
 ```bash
-$ echo REACT_APP_TOKEN= >> .env
+echo REACT_APP_TOKEN= >> .env
 ```
 
 A GitHub personal access token **must be copied to this file after the `=` sign**. These can be created [here](https://github.com/settings/tokens/new). Leaving all of the options blank on the creation screen will work for this project.
@@ -46,13 +46,13 @@ A GitHub personal access token **must be copied to this file after the `=` sign*
 Now you must install the **node modules**:
 
 ```bash
-$ npm i
+npm i
 ```
 
 Once the installation is complete you can start the project with:
 
 ```bash
-$ npm start
+npm start
 ```
 
 Now you can navigate to http://localhost:3000 to view the working site.
@@ -63,13 +63,13 @@ Now you can navigate to http://localhost:3000 to view the working site.
 To run the tests first cd into the `mvst-challenge` directory within your terminal:
 
 ```bash
-$ cd mvst-challenge
+cd mvst-challenge
 ```
 
 Now you can run the tests:
 
 ```bash
-$ npm test
+npm test
 ```
 
 ***
