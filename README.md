@@ -23,10 +23,17 @@ The `searchRepos` functions is used to filter through the user's repositories. F
 ***
 ## To Deploy
 
-To deploy the project first cd into the `mvst` directory within your terminal:
+To deploy the project first clone the repository from the terminal:
 
 ```bash
-$ cd mvst
+$ git clone git@github.com:SkinnyPigeon/mvst-challenge.git
+```
+
+
+Now you can change into the `mvst` directory:
+
+```bash
+$ cd mvst-challenge
 ```
 
 Now you must install the **node modules**:
@@ -49,7 +56,7 @@ Now you can navigate to http://localhost:3000 to view the working site.
 To run the tests first cd into the `mvst` directory within your terminal:
 
 ```bash
-$ cd mvst
+$ cd mvst-challenge
 ```
 
 Now you can run the tests:
