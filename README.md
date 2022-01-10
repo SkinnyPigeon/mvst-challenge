@@ -41,6 +41,8 @@ Once the installation is complete you can start the project with:
 $ npm start
 ```
 
+Now you can navigate to http://localhost:3000 to view the working site.
+
 ***
 ## To Run the Test Suite
 
