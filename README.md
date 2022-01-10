@@ -72,6 +72,12 @@ Now you can run the tests:
 npm test
 ```
 
+If prompted you call select the option to run all tests by pressing:
+
+```bash
+a
+```
+
 ***
 ## Future improvements
 I had originally wanted to include a tooltip on hover over the repositories. This would have contained additional details such as most recent commit message or similar.
