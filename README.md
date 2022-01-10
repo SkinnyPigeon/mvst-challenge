@@ -72,7 +72,7 @@ Now you can run the tests:
 npm test
 ```
 
-If prompted you call select the option to run all tests by pressing:
+If prompted you can select the option to run all tests by pressing:
 
 ```bash
 a
