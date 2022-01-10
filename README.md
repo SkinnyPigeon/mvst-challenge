@@ -29,7 +29,7 @@ To deploy the project first clone the repository from the terminal:
 $ git clone git@github.com:SkinnyPigeon/mvst-challenge.git
 ```
 
-Now you can change into the `mvst` directory:
+Now you can change into the `mvst-challenge` directory:
 
 ```bash
 $ cd mvst-challenge
@@ -60,7 +60,7 @@ Now you can navigate to http://localhost:3000 to view the working site.
 ***
 ## To Run the Test Suite
 
-To run the tests first cd into the `mvst` directory within your terminal:
+To run the tests first cd into the `mvst-challenge` directory within your terminal:
 
 ```bash
 $ cd mvst-challenge
